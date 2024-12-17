@@ -6,19 +6,30 @@
     "dist": "npx tsc",
     "dev": "nodemon src/server.ts",
     "start": "node dist/server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "prepare": "husky"
   },
   "author": "dibyajyoti",
   "license": "ISC",
   "description": "",
+  "lint-staged": {
+    "*.ts": [
+      "npm run lint:fix"
+    ]
+  },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.17.0",
     "@types/node": "^22.10.2",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.11",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.1"
   }
 }
